@@ -38,9 +38,25 @@ export default function Home({videos,account}) {
   
       <Head>
         <title>Disney Clone</title>
-        <meta name="description" content="Disney Clone App by Next.js" />
+    
         <link rel="icon" href="/disney.png" />
-       
+        
+        <meta name="title" content="Disney Clone"/>
+        <meta name="description" content="Disney Clone App by Next.js/GraphCms/Tailwindcss"/>
+
+        
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="https://disney-clone-gold.vercel.app/"/>
+        <meta property="og:title" content="Disney Clone"/>
+        <meta property="og:description" content="Disney Clone App by Next.js/GraphCms/Tailwindcss"/>
+        <meta property="og:image" content="/disney.png"/>
+
+        <meta property="twitter:card" content="summary_large_image"/>
+        <meta property="twitter:url" content="https://disney-clone-gold.vercel.app/"/>
+        <meta property="twitter:title" content="Disney Clone"/>
+        <meta property="twitter:description" content="Disney Clone App by Next.js/GraphCms/Tailwindcss"/>
+        <meta property="twitter:image" content="/disney.png"/>
+     
       </Head>
       <Navbar data={user?connect(account,user):false}/>
       <div className="app">
