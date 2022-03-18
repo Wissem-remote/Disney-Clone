@@ -63,7 +63,7 @@ export default function Home({videos,account}) {
           <div className="main-video">
            
            <Image className="img-main" 
-           layout='fill'
+           layout='responsive'
             src={spiderman} 
             alt="spiderman"
 
