@@ -7,20 +7,21 @@ import { useRouter } from "next/router"
         const [email,setEmail]=useState()
         const [pass,setPass]=useState()
         const [error,setEror]=useState(false)
+        
         const route = useRouter()
-        const check = (u,p)=>{
+        const check = (u)=>{
             let result = []
-            account.map((v)=>(v.email === u  && v.password === p )&& result.push(v.id) )
+           account.map((v)=>v.email === u &&  result.push(v.password,v.id))
             return result
            
         }
         const submit=  (e) => {
             setEror(null)
                 e.preventDefault()
-                
-                check(email,pass).length > 0 ? (localStorage.setItem("id", check(email,pass)), route.push("/")): setEror(true)
+                console.log(check(email))
+                check(email)[0] === pass ? (localStorage.setItem("id", check(email)[1]), route.push("/")): setEror(true)
         }
-       
+     
     return (
         <>
         <Navbar/>
