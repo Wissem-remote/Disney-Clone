@@ -31,7 +31,7 @@ export default function Posts ({video}){
     {console.log(tail)}
     { check  &&
     <div  >
-      <Image id="check" className="video-img" src={video[0].thumbail.url}
+      <Image id="check"  layout='fill' className="video-img" src={video[0].thumbail.url}
       alt={video[0].title}/>
       <div className="info">
         <p>{video[0].tags.join(', ')}</p><br/>
@@ -58,7 +58,7 @@ export default function Posts ({video}){
           <source src={video[0].mp4.url} type="video/mp4"  media="screen and (min-width:900px)"/>
         </video>
        :
-       <iframe src={video[0].mp4.url} ></iframe>
+       <iframe src={video[0].mp4.url} allow="autoplay;  fullscreen" ></iframe>
       }
       </div>
         }
