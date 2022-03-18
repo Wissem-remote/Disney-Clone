@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 
 import { BiUserPin } from "react-icons/bi";
 
-const Navbar=({data})=>{
+const Navbar=({data,check=false})=>{
     const route= useRouter()
 
     return <>
@@ -28,15 +28,17 @@ const Navbar=({data})=>{
          <img className="avatar" src={data[0].avatar.url} />   :
          <BiUserPin size="3em" className="mt-3 " color="rgb(2 132 199)" />
         } 
-       
+       {check&&
         <button className="mt-2  hover:bg-sky-600  border border-sky-900 border-solid rounded-full p-4 bg-sky-500 font-bold"
         onClick={()=>{
             window.localStorage.clear(),
-            route.push("/login/client/logout")
+            route.push("/")
         }}
         > Disc </button>
-        </div>
+       
       
+       }
+        </div>
         :
         <div  className="account">
             <Link href="/login/auth">

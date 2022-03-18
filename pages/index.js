@@ -9,6 +9,7 @@ import star from "../public/star.png"
 import natgeo from "../public/natgeo.png"
 import marvel from "../public/marvel.png"
 import disney from "../public/disney.png"
+import spiderman from "../public/spiderman.jpeg"
 import { Link } from 'react-scroll'
 
 export default function Home({videos,account}) {
@@ -45,35 +46,37 @@ export default function Home({videos,account}) {
       <div className="app">
           <div className="main-video">
            
-           <img className="img-main" 
-            src={videos[0].thumbail.url} 
-            alt={videos[0].title}
+           <Image className="img-main" 
+           layout='fill'
+            src={spiderman} 
+            alt="spiderman"
+
           />
           </div>
             <div className="videosss">
               <div className="cols" >
                 <Link to="Disney" smooth={true} duration={2000}>
-                  <Image src={disney} className="lien"/>
+                  <Image src={disney}  alt="disney" className="lien"/>
                 </Link>
               </div>
               <div className="cols" >
-                <Link to="Disney" smooth={true} duration={2000}>
-                  <Image src={marvel} className="lien"/>
+                <Link to="Marvel" smooth={true} duration={2000}>
+                  <Image src={marvel} alt="marvel" className="lien"/>
                 </Link>
               </div>
               <div className="cols" >
-                <Link to="Disney" smooth={true} duration={2000}>
-                  <Image src={natgeo} className="lien"/>
+                <Link to="Nationnal Geographic" smooth={true} duration={2000}>
+                  <Image src={natgeo} alt="nat" className="lien"/>
                 </Link>
               </div>
               <div className="cols" >
-                <Link to="Disney" smooth={true} duration={2000}>
-                  <Image src={pixar} className="lien"/>
+                <Link to="Pixar" smooth={true} duration={2000}>
+                  <Image src={pixar} className="lien" alt="pixar"/>
                 </Link>
               </div>
               <div className="cols" >
-                <Link to="Disney" smooth={true} duration={2000}>
-                  <Image src={star} className="lien"/>
+                <Link to="Star Wars" smooth={true} duration={2000}>
+                  <Image src={star} className="lien " alt="star"/>
                 </Link>
               </div>
             </div>
@@ -84,10 +87,10 @@ export default function Home({videos,account}) {
               <Section videos={filterVideo(videos,'Family')} >Family</Section>
               <Section videos={filterVideo(videos,'Classic')}>Classic</Section>
               <Section videos={filterVideo(videos,'Action')}>Action</Section>
-              <Section>Nationnal Geographic</Section>
-              <Section>Fantastique</Section>
-              <Section>Star Wars</Section>
-              <Section >Disney</Section>
+              <Section videos={filterVideo(videos,'National-Geographic')}>Nationnal Geographic</Section>
+              <Section  videos={filterVideo(videos,'Fantastique')}>Fantastique</Section>
+              <Section videos={filterVideo(videos,'Star-Wars')}>Star Wars</Section>
+              <Section videos={filterVideo(videos,'Disney')}>Disney</Section>
          
             </div>
           

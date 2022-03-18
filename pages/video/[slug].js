@@ -2,6 +2,7 @@
 import { GraphQLClient, gql } from 'graphql-request'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-scroll'
+import Image from 'next/image'
 
 const change = async (slug)=>{
   await fetch('/api/change',{
@@ -30,12 +31,12 @@ export default function Posts ({video}){
     {console.log(tail)}
     { check  &&
     <div  >
-      <img id="check" className="video-img" src={video[0].thumbail.url}
+      <Image id="check" className="video-img" src={video[0].thumbail.url}
       alt={video[0].title}/>
       <div className="info">
         <p>{video[0].tags.join(', ')}</p><br/>
         <p>{video[0].description}</p><br/>
-        <a href="/"> Go back</a><br/>
+        
         <Link to="video" smooth={true} duration={2000}>
         <button className="hover:bg-sky-600 text-xl  py-1 px-3 border border-sky-900 border-solid rounded bg-sky-500 text-center text-white-700"
         onClick={()=>{

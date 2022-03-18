@@ -2,7 +2,7 @@ import { GraphQLClient} from 'graphql-request'
 
 
 
-export default async({body},res)=>{
+export default async function  auth ({body},res){
     const url = process.env.URL
     const graphcms = new GraphQLClient(url, {
         headers: {
