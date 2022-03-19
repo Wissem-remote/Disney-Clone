@@ -1,13 +1,27 @@
 import Image from "next/image"
 import Link from "next/link"
-
+import { GraphQLClient, gql } from 'graphql-request'
 import logo from "../public/disney.png"
 import { useRouter } from 'next/router'
 
 import { BiUserPin } from "react-icons/bi";
+import { useEffect, useState } from "react";
 
-const Navbar=({data,check=false, user=false})=>{
+const Navbar=({check=false,accounts=false})=>{
+    const [user,setUser]=useState(false)
     const route= useRouter()
+
+    
+     
+     useEffect(()=>{
+        setUser(localStorage.getItem('id')? localStorage.getItem('id'):false)
+    },[])
+    
+    
+    const data=[]
+    accounts && accounts.map((v)=> {
+        v.id === "cl0xzp9hz0wf30bmpszxdpr95" && data.push(v)
+    } )
 
     return <>
     <div className="nav-bar">
@@ -17,7 +31,7 @@ const Navbar=({data,check=false, user=false})=>{
         </a>
     </Link>
     <div className="account">
-        {data ?
+        {user ?
         <div  className="account">
             <Link  href={`/login/client/${data[0].id}`}>
             <a className="wel">
@@ -60,5 +74,6 @@ const Navbar=({data,check=false, user=false})=>{
     
     </>
 }
+
 
 export default Navbar

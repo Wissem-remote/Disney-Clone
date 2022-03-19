@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { GraphQLClient, gql } from 'graphql-request'
 import Section from '../composant/section'
 import Navbar from '../composant/NavBar'
-import { useEffect, useState } from 'react'
+
 import pixar from "../public/pixar.png"
 import star from "../public/star.png"
 import natgeo from "../public/natgeo.png"
@@ -13,7 +13,7 @@ import spiderman from "../public/spiderman.jpeg"
 import { Link } from 'react-scroll'
 
 export default function Home({videos,account}) {
-  const [user,setUser]=useState(false)
+  
   const randownVideo =(video)=>{
     return Math.floor(Math.random() * video.length)
   }
@@ -25,15 +25,8 @@ export default function Home({videos,account}) {
   const unSeen=(video)=>{
     return video.filter( v => !v.seen)
   }
-  const connect=  (d,i)=>{
-    const result= []
-    d &&  d.map(v=> v.id === i && result.push(v) )
-    return result
-}
-
-    useEffect(()=>{
-        setUser(localStorage.getItem('id')? localStorage.getItem('id'):false)
-    },[])
+ 
+   
     //connect(account,user)
   return <>
   
@@ -59,7 +52,7 @@ export default function Home({videos,account}) {
         <meta property="twitter:image" content="https://disney-clone-gold.vercel.app/disney.png"/>
      
       </Head>
-      <Navbar data={false} user={user}/>
+      <Navbar accounts={account}/>
       
       <div className="app">
           <div className="main-video">
@@ -68,7 +61,7 @@ export default function Home({videos,account}) {
            layout='responsive'
             src={spiderman} 
             alt="spiderman"
-
+            priority
           />
           </div>
             <div className="videosss">

@@ -37,7 +37,7 @@ const submit= async (e)=>{
   
 }
 return<>
-<Navbar data={[account]} check={true}/>
+<Navbar check={true} accounts={[account]}/>
 
 <div>
   <h1 className="md:text-3xl md:px-5 text-xl md:text-left  font-blod text-gray-500 text-center ">Bienvenue dans votre espace  {account.userName}</h1>
