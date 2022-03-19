@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 
 
 
-const Check = ()=>{
+const Verif = ()=>{
     const route = useRouter()
     return<>
         <Navbar/>
@@ -30,4 +30,4 @@ const Check = ()=>{
 }
 
 
-export default Check
+export default Verif
