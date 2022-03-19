@@ -32,7 +32,7 @@ export default function Home({videos,account}) {
 }
 
     useEffect(()=>{
-        setUser(user => localStorage.getItem('id')? localStorage.getItem('id'):false)
+        setUser(localStorage.getItem('id')? localStorage.getItem('id'):false)
     },[])
   return <>
   
