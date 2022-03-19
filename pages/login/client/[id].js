@@ -40,8 +40,8 @@ return<>
 <Navbar data={[account]} check={true}/>
 
 <div>
-  <h1 className="md:text-3xl md:px-5">Bienvenue dans votre espace  {account.userName}</h1>
-<div className="sm:w-1/4 m-auto  w-3/4">
+  <h1 className="md:text-3xl md:px-5 text-xl md:text-left  font-blod text-gray-500 text-center ">Bienvenue dans votre espace  {account.userName}</h1>
+<div className="sm:w-1/4 m-auto  w-3/4 text-center md:mt-4">
 {valid && 
             <div className="text-xl  p-2 border border-emerald-900 border-solid rounded bg-emerald-500 text-center text-white" role="alert">
            Password Changed 
@@ -50,9 +50,9 @@ return<>
             <div className="text-xl  p-2 border border-red-900 border-solid rounded bg-red-500 text-center text-red-700" role="alert">
            Wrong Password
           </div>}
-        <h3 className=" block m-auto md:text-xl"> Vous pouvez changer votre Password</h3>
+        <h3 className="text-xl   font-blod text-gray-500 block m-auto md:text-xl"> Vous pouvez changer votre Password</h3>
           <form onSubmit={submit}>
-            <div className="w-64 ">
+            <div className="w-64 m-auto">
               <label className="block mt-3">Last Password</label>
               <input id="p" required className="text-gray-800 mt-2 p-3 rounded-full w-full border-2 border-gray-500 bg" type="password"
               onChange={(e)=>{
@@ -60,7 +60,7 @@ return<>
               }}
               />
             </div>
-            <div className="w-64">
+            <div className="w-64 m-auto">
               <label className="block mt-3" >New Password</label>
               <input id="n" required className="text-gray-800 mt-2 p-3 rounded-full w-full border-2 border-gray-500 bg" type="password" 
               onChange={(e)=>{

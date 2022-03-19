@@ -11,6 +11,7 @@ const Verif = ()=>{
         <h1 className="text-3xl   font-blod text-gray-700">
                         Félicitation vous venez de vous Inscrire
                         </h1>
+                        <h3 className="text-xl   font-blod text-gray-500">Veuillez patienter quelle que minutes nous procédons à la création de votre compte ...</h3>
                         <button
                         onClick={()=>{
                             route.push("/login/auth")
