@@ -15,14 +15,12 @@ import { useRouter } from "next/router"
             return result
            
         }
-        const submit= async (e) => {
+        const submit=  (e) => {
             setEror(null)
                 e.preventDefault()
-                console.log(email)
-                console.log(check(email))
-                await check(email)[0] === pass ? (localStorage.setItem("id", check(email)[1]), route.push("/")): setEror(true)
+                
+                 check(email)[0] === pass ? (localStorage.setItem("id", check(email)[1]), route.push("/")): setEror(true)
         }
-       console.log(account)
     return (
         <>
         <Navbar/>
