@@ -34,6 +34,7 @@ export default function Home({videos,account}) {
     useEffect(()=>{
         setUser(localStorage.getItem('id')? localStorage.getItem('id'):false)
     },[])
+    //connect(account,user)
   return <>
   
       <Head>
@@ -58,7 +59,8 @@ export default function Home({videos,account}) {
         <meta property="twitter:image" content="https://disney-clone-gold.vercel.app/disney.png"/>
      
       </Head>
-      <Navbar data={user?connect(account,user):false}/>
+      <Navbar data={false} user={user}/>
+      
       <div className="app">
           <div className="main-video">
            
@@ -119,7 +121,7 @@ export default function Home({videos,account}) {
 }
 
 
-export async function getStaticProps() {
+export async function  getServerSideProps() {
   const url = process.env.URL
   const graphQLClient = new GraphQLClient(url, {
     headers: {

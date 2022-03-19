@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 
 import { BiUserPin } from "react-icons/bi";
 
-const Navbar=({data,check=false})=>{
+const Navbar=({data,check=false, user})=>{
     const route= useRouter()
 
     return <>
@@ -46,6 +46,7 @@ const Navbar=({data,check=false})=>{
             <p > Connect |</p>
             </a>
             </Link>
+            <p>{user}</p>
             <Link href="/login/sign">
             <a className="wel" >
         <p > Sing-up </p>
