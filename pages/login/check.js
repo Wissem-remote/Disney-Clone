@@ -23,7 +23,7 @@ const Verif = ()=>{
                             route.push("/")
                         }}
                         className="hover:bg-blue-700  text-xl rounded py-2 px-3 bg-blue-900 mt-4 m-3">
-                            Aller à l'acceuil ?
+                            Aller à l acceuil ?
                             </button>
         </div>
         </>
