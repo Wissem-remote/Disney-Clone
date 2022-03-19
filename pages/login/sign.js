@@ -20,7 +20,7 @@ import { useRouter } from "next/router"
             setEror(null)
                 e.preventDefault()
                 
-                checkEmail(email).length > 0 && setEror(true)
+                checkEmail(email).length > 0 && await setEror(true)
                
                 
                 checkEmail(email).length === 0 && await ( fetch('/api/auth',{
