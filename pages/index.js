@@ -25,9 +25,9 @@ export default function Home({videos,account}) {
   const unSeen=(video)=>{
     return video.filter( v => !v.seen)
   }
-  const connect= async (d,i)=>{
+  const connect=  (d,i)=>{
     const result= []
-    d && await d.map(v=> v.id === i && result.push(v) )
+    d &&  d.map(v=> v.id === i && result.push(v) )
     return result
 }
 
