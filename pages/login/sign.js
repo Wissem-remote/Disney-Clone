@@ -16,20 +16,22 @@ import { useRouter } from "next/router"
             return result
            
         }
-        const submit=async (e) => {
+        const submit=(e) => {
             setEror(null)
                 e.preventDefault()
                 
-                checkEmail(email).length > 0 && await setEror(true)
+                checkEmail(email).length > 0 && setEror(true)
                
                 
-                checkEmail(email).length === 0 && await ( fetch('/api/auth',{
+                checkEmail(email).length === 0 &&  fetch('/api/auth',{
                     method : 'POST',
                     headers :{
                       'Content-Type':'application/json'
                     },
                     body: JSON.stringify({user,pass,email})
-                  }),router.push("/login/check"))
+                  })
+                  
+                  checkEmail(email).length === 0 && router.push("/login/check")
         }
  
     return (
