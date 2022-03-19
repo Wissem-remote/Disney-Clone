@@ -1,6 +1,6 @@
 import { GraphQLClient, gql } from 'graphql-request'
 
-import {  useState } from 'react'
+import {  useEffect, useState } from 'react'
 import Navbar from '../../../composant/NavBar'
 import { useRouter } from 'next/router'
 
@@ -11,9 +11,12 @@ const Client =({account})=>{
   const [newpass,setNewpass]=useState()
   const [check,setChek]=useState(false)
   const [valid,setValid]=useState(false)
-  const route = useRouter()
-  
   const id = account.id
+  const route = useRouter()
+  useEffect(()=>{
+    !localStorage.getItem('id')&& route.push('/')
+  })
+  
   const email = account.email
 const submit= async (e)=>{
   setChek(null)

@@ -15,11 +15,11 @@ import { useRouter } from "next/router"
             return result
            
         }
-        const submit=  (e) => {
+        const submit= async (e) => {
             setEror(null)
                 e.preventDefault()
                 console.log(check(email))
-                check(email)[0] === pass ? (localStorage.setItem("id", check(email)[1]), route.push("/")): setEror(true)
+                await check(email)[0] === pass ? (localStorage.setItem("id", check(email)[1]), route.push("/")): setEror(true)
         }
      
     return (
