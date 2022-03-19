@@ -20,7 +20,7 @@ const Navbar=({check=false,accounts=false})=>{
     
     const data=[]
     accounts && accounts.map((v)=> {
-        v.id === "cl0xzp9hz0wf30bmpszxdpr95" && data.push(v)
+        v.id === user && data.push(v)
     } )
 
     return <>
