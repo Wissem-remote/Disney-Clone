@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import {  useState } from "react"
 import Navbar from "../../composant/NavBar"
 import { GraphQLClient, gql } from 'graphql-request'
 import { useRouter } from "next/router"
@@ -20,7 +20,7 @@ import { useRouter } from "next/router"
                 e.preventDefault()
                 
                 checkEmail(email).length > 0 && setEror(true)
-                
+                console.log(email)
                 
                 checkEmail(email).length === 0 &&  fetch('/api/auth',{
                     method : 'POST',
@@ -30,9 +30,9 @@ import { useRouter } from "next/router"
                     body: JSON.stringify({user,pass,email})
                   })
               
-                  checkEmail(email).length === 0 && router.push("/login/auth")
+                  checkEmail(email).length === 0 && router.push("/login/check")
         }
-   
+  
     return (
         <>
         <Navbar/>
@@ -57,7 +57,7 @@ import { useRouter } from "next/router"
                                    <label className="block mt-2 text-gray-600"> Email</label>
                             <input required className="text-gray-800 mt-2 p-3 rounded-full w-full border-2 border-gray-500 bg-slate-50" type="email" name="email"
                             onChange={((e)=>{
-                            setEmail(e.target.value) 
+                            setEmail(e.target.value.toLowerCase()) 
                             })}
                             />
                             <label className="block mt-2  text-gray-600"> Password</label>

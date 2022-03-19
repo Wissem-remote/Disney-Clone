@@ -18,10 +18,11 @@ import { useRouter } from "next/router"
         const submit= async (e) => {
             setEror(null)
                 e.preventDefault()
+                console.log(email)
                 console.log(check(email))
                 await check(email)[0] === pass ? (localStorage.setItem("id", check(email)[1]), route.push("/")): setEror(true)
         }
-     
+       console.log(account)
     return (
         <>
         <Navbar/>
@@ -41,7 +42,7 @@ import { useRouter } from "next/router"
                             <label className="block mt-2 text-gray-600"> Email</label>
                             <input required className="text-gray-800 mt-2 p-3 rounded-full w-full border-2 border-gray-500 bg-slate-50" type="email" name="username"
                             onChange={((e)=>{
-                            setEmail(e.target.value) 
+                            setEmail(e.target.value.toLowerCase()) 
                             })}
                             />
                             <label className="block mt-2  text-gray-600"> Password</label>
@@ -84,7 +85,9 @@ export async function getStaticProps() {
       props: {
        
         account,
-      }, // will be passed to the page component as props
+      },
+      revalidate: 1,
+      // will be passed to the page component as props
     }
   }
 
