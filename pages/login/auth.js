@@ -60,7 +60,7 @@ import { useRouter } from "next/router"
     )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const url = process.env.URL
     const graphQLClient = new GraphQLClient(url, {
       headers: {
