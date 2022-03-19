@@ -8,6 +8,7 @@ import { useRouter } from "next/router"
         const [user,setUser]=useState()
         const [pass,setPass]=useState()
         const [error,setEror]=useState(false)
+        
         const router = useRouter()
         const checkEmail = (e)=>{
             let result = []
@@ -15,24 +16,22 @@ import { useRouter } from "next/router"
             return result
            
         }
-        const submit=  (e) => {
+        const submit=async (e) => {
             setEror(null)
                 e.preventDefault()
                 
                 checkEmail(email).length > 0 && setEror(true)
-                console.log(email)
+               
                 
-                checkEmail(email).length === 0 &&  fetch('/api/auth',{
+                checkEmail(email).length === 0 && await ( fetch('/api/auth',{
                     method : 'POST',
                     headers :{
                       'Content-Type':'application/json'
                     },
                     body: JSON.stringify({user,pass,email})
-                  })
-              
-                  checkEmail(email).length === 0 && router.push("/login/check")
+                  }),router.push("/login/check"))
         }
-  
+ 
     return (
         <>
         <Navbar/>
