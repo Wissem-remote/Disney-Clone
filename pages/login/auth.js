@@ -86,7 +86,7 @@ export async function getServerSideProps() {
        
         account,
       },
-      revalidate: 1,
+      revalidate: 10,
       // will be passed to the page component as props
     }
   }
