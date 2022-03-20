@@ -51,7 +51,7 @@ export default function Posts ({video}){
       </div>
 }
       {play  &&
-      <div >
+      <div className="show" >
     
       {check ?
         <video  width="100%" height="auto" controls>
