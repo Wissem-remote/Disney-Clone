@@ -66,7 +66,8 @@ a{
     cursor: pointer;
 }
 .section{
-    width: 100%;
+    width: 95%;
+    margin: 0 auto;
     cursor:grab;
     overflow: hidden;
 }
@@ -75,6 +76,32 @@ a{
     min-width:25%;
     height: auto;
     cursor: pointer;
+}
+.h{
+position:absolute;
+margin-top: 7%;
+color: rgba(255,255,255, 0.5);
+background-color: rgba(5, 5, 5, 0.1);
+z-index: 2;
+left: 1%;
+padding: 1%;
+}
+.p{
+    position:absolute;
+    margin-top: 7%;
+    color: rgba(255,255,255, 0.5);
+    background-color: rgba(5, 5, 5, 0.1);
+    z-index: 2;
+    right: 1%;
+    padding: 1%;
+}
+.h:hover{
+    background-color: rgba(255, 255, 255, .1);
+    color: rgba(255,255,255, 0.8);
+}
+.p:hover{
+    background-color: rgba(255, 255, 255, .1);
+    color: rgba(255,255,255, 0.8);
 }
 
 .video {
@@ -95,6 +122,12 @@ a{
 }
 
 @media screen and (max-width: 900px){
+    .h{
+            display: none;
+    }
+    .p{
+        display:none;
+    }
     .wel{
         font-size: 60%;
     }
