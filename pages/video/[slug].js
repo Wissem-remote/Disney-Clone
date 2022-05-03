@@ -28,11 +28,12 @@ export default function Posts ({video}){
   },[])
 
     return <>
-    {console.log(tail)}
+    
     { check  &&
     <div  >
-      <Image id="check"  layout='fill' className="video-img" src={video[0].thumbail.url}
-      alt={video[0].title}/>
+      <img className="video-img" id="check"  src={video[0].thumbail.url} alt={video[0].title}/> 
+      {/* <Image id="check"  layout='fill' className="video-img" src={video[0].thumbail.url}
+      alt={video[0].title}/> */}
       <div className="info">
         <p>{video[0].tags.join(', ')}</p><br/>
         <p>{video[0].description}</p><br/>
