@@ -31,9 +31,9 @@ export default function Posts ({video}){
     
     { check  &&
     <div  >
-      <img className="video-img" id="check"  src={video[0].thumbail.url} alt={video[0].title}/> 
-      {/* <Image id="check"  layout='fill' className="video-img" src={video[0].thumbail.url}
-      alt={video[0].title}/> */}
+      {/* <img className="video-img" id="check"  src={video[0].thumbail.url} alt={video[0].title}/>  */}
+      <Image id="check" width="100%" height="100%"  layout='fill' className="video-img" src={video[0].thumbail.url}
+      alt={video[0].title}/>
       <div className="info">
         <p>{video[0].tags.join(', ')}</p><br/>
         <p>{video[0].description}</p><br/>
