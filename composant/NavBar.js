@@ -63,7 +63,7 @@ const Navbar=({check=false,accounts=false})=>{
             <p>{user&& user}</p>
             <Link href="/login/sign">
             <a className="wel" >
-        <p > Sing-up </p>
+        <p > Sign-up </p>
             </a>
             </Link>
         </div>
