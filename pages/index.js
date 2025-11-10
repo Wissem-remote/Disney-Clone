@@ -9,7 +9,6 @@ import star from "../public/star.png"
 import natgeo from "../public/natgeo.png"
 import marvel from "../public/marvel.png"
 import disney from "../public/disney.png"
-import spiderman from "../public/spiderman.jpeg"
 import { Link } from 'react-scroll'
 
 export default function Home({videos,account}) {
@@ -57,12 +56,11 @@ export default function Home({videos,account}) {
       <div className="app">
           <div className="main-video">
            
-           <Image className="img-main" 
-           layout='responsive'
-            src={spiderman} 
-            alt="spiderman"
-            priority
-          />
+          <Image
+        src="/spiderman.jpeg" // juste le chemin relatif à /public
+        alt="Spiderman"
+        style={{ width: '100%', height: 'auto' }} 
+      />
           </div>
             <div className="videosss">
               <div className="cols" >

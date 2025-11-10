@@ -27,12 +27,23 @@ export default function Posts ({video}){
     
   },[])
 
+  console.log(video[0])
+  let imgObj = video[0].thumbail
+  console.log(imgObj.url)
+
     return <>
     
     { check  &&
     <div  >
       {/* <img className="video-img" id="check"  src={video[0].thumbail.url} alt={video[0].title}/>  */}
-      <Image id="check" width="100%" height="100%"  layout='fill' className="video-img" src={video[0].thumbail.url}
+      <Image 
+      id="check" 
+      width="100%" 
+      height="100%"  
+      layout='fill' 
+      className="video-img" 
+      src={imgObj.url}
+
       alt={video[0].title}/>
       <div className="info">
         <p>{video[0].tags.join(', ')}</p><br/>
